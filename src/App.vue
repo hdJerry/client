@@ -1,12 +1,79 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <Profile v-if="isAuthenticated"></Profile>
+
+    <router-view v-if="!isAuthenticated"></router-view>
   </div>
 </template>
+
+
+<script>
+
+import {EventBus} from './eventbus';
+import Profile from '@/views/Profile.vue'
+
+export default{
+  components:{
+    Profile
+  },
+  data(){
+    return{
+      isAuthenticated : false
+    }
+  },
+  created(){
+   EventBus.$on('login',this.login)
+   EventBus.$on('logout',this.logout)
+ },
+  methods:{
+
+    login(data){
+      this.isAuthenticated = true;
+
+      // console.log(data);
+      localStorage.setItem("user",JSON.stringify(data));
+
+      setTimeout(() => {
+
+            window.location.reload()
+         }, 100);
+
+    },
+    logout(){
+
+      this.isAuthenticated = false;
+
+      // console.log(data);
+      localStorage.removeItem("user");
+
+        this.$router.push('/')
+    }
+
+  },
+  mounted(){
+
+
+
+    let user  = JSON.parse(localStorage.getItem('user'));
+
+    if(!!user){
+      this.isAuthenticated = true;
+      // this.isLogged = true;
+    }
+
+
+    window.onpopstate = event => {
+      if (
+        window.localStorage.getItem("user") !== null &&
+        this.$route.path == "/"
+      ) {
+        this.$router.push("/profile"); // redirect to home, for example
+      }
+    };
+  }
+}
+
+</script>
 
 <style>
 #app {
