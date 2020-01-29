@@ -140,7 +140,8 @@ export default {
     if(!!user){
       this.datas = user
 
-      this.email = user.email ;
+      this.email = user.email;
+      this.dob = user.dob;
       this.colors = user.secret.color;
       this.address = user.address || "No Address";
       this.movie = user.secret.movie || "";
