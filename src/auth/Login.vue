@@ -56,6 +56,8 @@
 
       </div>
 
+      <p>Don't have an account? <router-link to="/register">Create an Account</router-link></p>
+
 
     </div>
   </div>

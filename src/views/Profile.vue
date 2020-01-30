@@ -4,7 +4,7 @@
           <div class="profile">
             <nav class="navbar navbar-expand-md navbar-light bg-light">
                 <div class="container">
-                <router-link to="/profile" class="navbar-brand">Welcomw</router-link>
+                <router-link to="/profile" class="navbar-brand">Profile</router-link>
           <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
               <span class="navbar-toggler-icon"></span>
           </button>

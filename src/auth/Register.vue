@@ -119,6 +119,10 @@
           <!-- row -->
         </form>
       </div>
+      <p style="margin-top : -30px;">
+        Already have an account?
+        <router-link to="/login">Sign In</router-link>
+      </p>
 </div>
 
 </template>
