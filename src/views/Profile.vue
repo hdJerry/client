@@ -11,10 +11,23 @@
 
           <div class="collapse navbar-collapse" id="navbarCollapse">
 
-              <div class="navbar-nav ml-auto">
+            <div class="dropdown navbar-nav ml-auto" style="margin-top:5px;">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Menu
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                  <router-link to="/profile/edit" class="dropdown-item" >Edit Profile</router-link>
+                  <a class="dropdown-item logout" @click.prevent="logout">Logout</a>
+                  <!-- <button class="dropdown-item" type="button">Action</button>
+                  <button class="dropdown-item" type="button">Another action</button>
+                  <button class="dropdown-item" type="button">Something else here</button> -->
+                </div>
+              </div>
+
+              <!-- <div class="navbar-nav ml-auto">
                 <router-link to="/profile/edit" class="btn btn-outline-success nav-item nav-link mr-10" >Edit Profile</router-link>
                 <a class="btn btn-outline-success nav-item nav-link mr-10" @click="logout">Logout</a>
-              </div>
+              </div> -->
             </div>
           </div>
          </nav>
@@ -100,5 +113,9 @@ export default {
   background: #222831;
   transform: scale(1.05);
 }
-
+.logout, .logout:hover{
+  background: #f00;
+  color:#fff;
+  cursor: pointer;
+}
 </style>
