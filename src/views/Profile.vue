@@ -12,7 +12,7 @@
           <div class="collapse navbar-collapse" id="navbarCollapse">
 
             <div class="dropdown navbar-nav ml-auto" style="margin-top:5px;">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <button class="btn btn-text-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Menu
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
